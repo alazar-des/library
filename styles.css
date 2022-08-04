@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body  {
+  background-color: #F5F8FB;
+  color: #484d52;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+button {
+  margin-left: auto;
+  background-color: #27B976;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #209e63;
+}
+
+.form-container {
+  display: grid;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000015;
+}
+
+.form-container.hidde {
+  display: none;
+}
+
+form {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0px -1px 10px #484d5230, 0px 0px 10px #484d5230;
+  background-color: white;
+}
+
+form div label,
+form div input,
+form select option {
+  display: block;
+  width: 210px;
+  line-height: 1.25rem;
+  color: #484d52;
+}
+
+form input {
+  border: 1px solid #484d5230;
+}
+
+form input:focus {
+  outline: none;
+  border: 1px solid #27B976a0;
+  border-radius: 5px;
+}
+
+.status {
+  display: inline;
+}
+
+.submit {
+  width: 100%;
+}
+
+.select-status {
+  justify-self: start;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 1rem 5vw;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+  border-bottom: #484d5230;
+}
+
+svg {
+  width: 1.5rem;
+  height: auto;
+  fill: #484d52
+}
+
+svg:hover {
+  fill: rgb(221, 12, 12);
+}
+
+.notread,
+.read {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.notread {
+  background-color: #dfba41;
+  color: #484d52;
+}
+
+.read {
+  background-color: #209e63;
+  color: white;
+}
+
+.notread:hover {
+  background-color: #dbb537;
+}
