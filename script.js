@@ -97,7 +97,7 @@ class Book {
 
 function validateForm() {
   const inputs = document.querySelectorAll("input");
-  inputs.forEach(input => validate(input));
+  inputs.forEach((input) => validate(input));
   return Array.from(inputs).every((input) => input.validity.valid);
 }
 
@@ -130,7 +130,10 @@ function validate(target) {
     target.classList.remove("error");
   } else {
     target.classList.add("error");
-    target.previousElementSibling.children[1].textContent = " *Required";
+    if (target.validity.rangeUnderflow)
+      target.previousElementSibling.children[1].textContent =
+        " *Should be greater than 0";
+    else target.previousElementSibling.children[1].textContent = " *Required";
   }
 }
 
@@ -147,7 +150,9 @@ function validate(target) {
   form.addEventListener("submit", addBook);
 
   const inputs = document.querySelectorAll("input");
-  inputs.forEach((input) => input.addEventListener("focusout", e => validate(e.target)));
+  inputs.forEach((input) =>
+    input.addEventListener("focusout", (e) => validate(e.target))
+  );
 
   const formContainer = document.querySelector(".form-container");
   formContainer.addEventListener("click", (e) => {
