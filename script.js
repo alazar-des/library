@@ -97,6 +97,7 @@ class Book {
 
 function validateForm() {
   const inputs = document.querySelectorAll("input");
+  inputs.forEach(input => validate(input));
   return Array.from(inputs).every((input) => input.validity.valid);
 }
 
@@ -119,17 +120,17 @@ function addBook(e) {
     );
     newBook.addTableRow();
     displayBookCount();
+    form.reset();
   }
-  document.querySelector("#book-form").reset();
 }
 
-function validate(e) {
-  if (e.target.validity.valid) {
-    e.target.previousElementSibling.children[1].textContent = "";
-    e.target.classList.remove("error");
+function validate(target) {
+  if (target.validity.valid) {
+    target.previousElementSibling.children[1].textContent = "";
+    target.classList.remove("error");
   } else {
-    e.target.classList.add("error");
-    e.target.previousElementSibling.children[1].textContent = " *Required";
+    target.classList.add("error");
+    target.previousElementSibling.children[1].textContent = " *Required";
   }
 }
 
@@ -146,7 +147,7 @@ function validate(e) {
   form.addEventListener("submit", addBook);
 
   const inputs = document.querySelectorAll("input");
-  inputs.forEach((input) => input.addEventListener("focusout", validate));
+  inputs.forEach((input) => input.addEventListener("focusout", e => validate(e.target)));
 
   const formContainer = document.querySelector(".form-container");
   formContainer.addEventListener("click", (e) => {
