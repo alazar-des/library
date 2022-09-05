@@ -5,13 +5,13 @@
 body  {
   background-color: #F5F8FB;
   color: #484d52;
+  padding: 1rem 5vw;
 }
 
-header {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
 }
 
 button {
@@ -109,7 +109,7 @@ svg {
 }
 
 svg:hover {
-  fill: rgb(221, 12, 12);
+  fill: #dd0c0c;
 }
 
 .notread,
@@ -134,4 +134,20 @@ svg:hover {
 
 .notread:hover {
   background-color: #dbb537;
+}
+
+span.error {
+  font-size: 0.75rem;
+  color: #dd0c0c;
+}
+
+input.error {
+  outline: none;
+  border: 1px solid #dd0c0c;
+  border-radius: 5px;
+}
+
+p.books {
+  font-size: 0.8rem;
+  text-align: right;
 }
